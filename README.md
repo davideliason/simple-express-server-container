@@ -18,6 +18,7 @@ Within ECS, config LB, Target Group, build cluster using YAML file, task that te
 
 
 ## Steps
-1. build out simple express app, VCS
-2. install npm modules/dependencies
-3. 
+1. build out simple express app, VCS in services folder
+ - install npm modules/dependencies
+3. Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
+4. 
