@@ -12,13 +12,20 @@ At this point, creating a monolith app, microservices will be up at some other p
 
 Build node.js/express/ code, keeping it simple without mongodb at this point. Create repo in ECR. ECR login -> build image of code, tag it -> push repo to ECR. Boom, that's sitting in the cloud.
 
-Now, deploy that image. ECS = Elastic Container Service, will manage container(s) over EC2 cluster. Client -> LB -> Target Group -> Cluster of EC2 instances. 
+Now, deploy that image. ECS = Elastic Container Service, will manage container(s) over EC2 cluster. Client -> LB -> Target Group -> Cluster of EC2 instances tnx to CloudFormation. 
 
-Within ECS, config LB, Target Group, build cluster using YAML file, task that tells ECS how to use the container(s) with the EC2 instances
+Within ECS, config LB, Target Group, build cluster using YAML file, task that tells ECS how to use the container(s) with the EC2 instances.
+
+[Docker Getting-started](https://docs.docker.com/get-started/part2/#introduction). Build container -> Services (how containers behave in production) -> Stack (interactino of all the services). I'm going to be following these concepts using this app.
 
 
 ## Steps
-1. build out simple express app, VCS in services folder
+1. [Container] build out simple express app, VCS in services folder
  - install npm modules/dependencies
-3. Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
-4. 
+2. Build Dockerfile to create an image -> push to AWS ECR -> deploy just to test on a basic level.
+	: $ docker login
+	: $ docker run hello-world //successful
+	: 
+3. Take it to the next level by building a cluster: Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
+4. Oops, have to rm node_modules, add .gitignore
+5. 
