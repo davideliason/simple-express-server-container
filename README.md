@@ -22,10 +22,19 @@ Within ECS, config LB, Target Group, build cluster using YAML file, task that te
 ## Steps
 1. [Container] build out simple express app, VCS in services folder
  - install npm modules/dependencies
+ - remove node_modules so they don't get ported to container :)
 2. Build Dockerfile to create an image -> push to AWS ECR -> deploy just to test on a basic level.
 	: $ docker login
 	: $ docker run hello-world //successful
-	: 
+	: create Dockerfile + .dockerignore (node_modules, npm-debug.log)
+	: run the build command to create Docker image
+	  - $ docker build -t simple-simple-express-server-container-image .
+	  - $ docker images  // container id
+	  - server's port is 8080
+	  - $ docker run -p 49160:8080 -d [image name]
+	  - $ docker ps  // get app port (8080 mapped to 49160)
+	  - curl -i localhost:49160 to get express server output, or
+	  - http://0.0.0.0:49160  in browser
 3. Take it to the next level by building a cluster: Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
 4. Oops, have to rm node_modules, add .gitignore
 5. 
