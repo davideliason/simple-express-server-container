@@ -1,0 +1,25 @@
+{
+  "name": "simple-express-server-container",
+  "version": "1.0.0",
+  "description": "simple express app",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideliason/simple-express-server-container.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideliason/simple-express-server-container/issues"
+  },
+  "homepage": "https://github.com/davideliason/simple-express-server-container#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
