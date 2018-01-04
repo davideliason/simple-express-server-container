@@ -18,12 +18,13 @@ Within ECS, config LB, Target Group, build cluster using YAML file, task that te
 
 [Docker Getting-started](https://docs.docker.com/get-started/part2/#introduction). Build container -> Services (how containers behave in production) -> Stack (interactino of all the services). I'm going to be following these concepts using this app.
 
-
 ## Steps
 1. [Container] build out simple express app, VCS in services folder
  - install npm modules/dependencies
  - remove node_modules so they don't get ported to container :)
+ - ah, can use .dockerignore file instead (see below)
 2. Build Dockerfile to create an image -> push to AWS ECR -> deploy just to test on a basic level.
+ 2.1 [build local docker instance first b4 ECR deploy](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 	: $ docker login
 	: $ docker run hello-world //successful
 	: create Dockerfile + .dockerignore (node_modules, npm-debug.log)
