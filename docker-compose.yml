@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    # pull the image we'd uploaded previously
+    image: davethemaker/simple-express-server-container:v1
+    deploy:
+      # run 5 instances of that image as a service called web, each is limited to at most 10% of the CPU and 50MB RAM
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      # restart immediately containers if one fails
+      restart_policy:
+        condition: on-failure
+      # instruct web's containers to share port 49160 via a load balanced networked called webnet
+    ports:
+      - "49160:8080"
+    networks:
+      - webnet
+networks:
+  webnet:
