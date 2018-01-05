@@ -3,13 +3,15 @@
 ### Woohoo!
 #### [David Eliason](http://www.davethemaker.com)
 
+[check out blog post here](http://davethemaker.com/?p=591)
+
 # Intro
 [tutorial](https://aws.amazon.com/getting-started/container-microservices-tutorial/module-two/)
 container mostly on my own, solidify concepts around Docker containers and also blow off the cobwebs of working on the back-end as it's been a little while ;)
 
 ## Docker Cloud Simple Express Docker Image can be ran as a container by :
  $ docker run -p 49160:8080 davethemaker/simple-express-server-container:v1 and http://0.0.0.0:49160/ in browser.
- 
+
 ## 10,000 foot overview:
 At this point, creating a monolith app, microservices will be up at some other point. 
 
