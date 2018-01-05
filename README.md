@@ -54,4 +54,3 @@ docker stop __container___  // stop
    - IT WORKS: $ docker run -p 49160:8080 davethemaker/simple-express-server-container:v1 and http://0.0.0.0:49160/ in browser.
 3. Take it to the next level by building a cluster: Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
 4. Oops, have to rm node_modules, add .gitignore
-5. 
