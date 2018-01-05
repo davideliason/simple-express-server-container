@@ -35,7 +35,7 @@ docker stop __container___  // stop
  - install npm modules/dependencies
  - remove node_modules so they don't get ported to container :)
  - ah, can use .dockerignore file instead (see below)
-2. Build Dockerfile to create an image -> push to AWS ECR -> deploy just to test on a basic level.
+2. Build Dockerfile to create an image -> push to Docker cloud -> deploy just to test on a basic level.
  2.1 [build local docker instance first b4 ECR deploy](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 	: $ docker login
 	: $ docker run hello-world //successful
@@ -53,5 +53,9 @@ docker stop __container___  // stop
    - tag the image ex: docker tag simple-express-server-container my_username/simple-express-server-container:v1
    - publish the image: docker push my_username/simple-express-server-container:v1
    - IT WORKS: $ docker run -p 49160:8080 davethemaker/simple-express-server-container:v1 and http://0.0.0.0:49160/ in browser.
-3. Take it to the next level by building a cluster: Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
+
+### [Scaling our app, using load-balancing blog post](http://davethemaker.com/?p=597)
+3. Scale the app by using it as a service
+
+4. Take it to the next level by building a cluster: Build up AWS CloudFormation infrastructure config code within infrastructure folder. At this point, the only file outside those two folers is the README file
 4. Oops, have to rm node_modules, add .gitignore
