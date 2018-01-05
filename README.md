@@ -3,7 +3,7 @@
 ### Woohoo!
 #### [David Eliason](http://www.davethemaker.com)
 
-[check out blog post here](http://davethemaker.com/?p=591)
+
 
 # Intro
 [tutorial](https://aws.amazon.com/getting-started/container-microservices-tutorial/module-two/)
@@ -30,6 +30,7 @@ docker images  // list local docker images
 docker stop __container___  // stop
 
 ## Steps
+### [building docker image and deploying to cloud blog post](http://davethemaker.com/?p=591)
 1. [Container] build out simple express app, VCS in services folder
  - install npm modules/dependencies
  - remove node_modules so they don't get ported to container :)
